@@ -1,6 +1,6 @@
 # Version 2 : Done by Armaan
 PyPdf2 was deprecated so switched to a new version PyPdf only.
-Just run - and use it.
+Just run - and use it. (https://pypi.org/project/pypdf/#history)
 ```
 pip install pypdf
 ```
