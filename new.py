@@ -9,21 +9,19 @@ Data = {
     "Phone"  : "+91 6309818915"
   },
   "Club" : {
-    "name" : "Lambda"
+    "name" : "Sci-Tech Council"
   },
   "Event" : {
-    "title" : "Dual Booting Session",
-    "Purpose" : "Linux Instalation",
-    "Date" : "23rd August, 2024",
-    "Time" : "8PM - 12PM"
+    "title" : "Full Council Meeting",
+    "Purpose" : "Full Council Meeting",
+    "Date" : "8th September, 2024",
+    "Time" : "9PM"
   },
   "Room" : "ALH-2"
 }
 ############################################
 
-
-
-from PyPDF2 import PdfWriter, PdfReader
+from pypdf import PdfWriter, PdfReader
 import io
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
@@ -39,6 +37,7 @@ can.drawString(240, 484, Data["Room"])
 can.drawString(240, 452, Data["Event"]["Date"])
 can.drawString(240, 432, Data["Event"]["Time"])
 can.drawString(85, 380, Data["Event"]["Purpose"])
+can.drawString(30, 160, Data["Student"]["name"])
 can.save()
 
 packet1.seek(0)
@@ -48,9 +47,8 @@ output = PdfWriter()
 page = existing_pdf.pages[0]
 page.merge_page(new_pdf.pages[0])
 output.add_page(page)
-output_stream = open("submit_rb.pdf", "wb")
-output.write(output_stream)
-output_stream.close()
+with open("submit_rb.pdf", "wb") as output_stream:
+    output.write(output_stream)
 
 # GYMKHANA.pdf
 packet2 = io.BytesIO()
@@ -80,6 +78,5 @@ output.add_page(page)
 page = existing_pdf.pages[1]
 page.merge_page(new_pdf_2.pages[0])
 output.add_page(page)
-output_stream = open("submit_gymkhana.pdf", "wb")
-output.write(output_stream)
-output_stream.close()
+with open("submit_gymkhana.pdf", "wb") as output_stream:
+    output.write(output_stream)

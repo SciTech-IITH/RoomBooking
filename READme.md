@@ -1,3 +1,10 @@
+# Version 2 : Done by Armaan
+PyPdf2 was deprecated so switched to a new version PyPdf only.
+Just run - and use it.
+```
+pip install pypdf
+```
+
 # Purpose
 1. To quickly generate the Documents needed by the Gymkhana and the Room Booking
    office to book a room.
