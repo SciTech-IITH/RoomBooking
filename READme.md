@@ -1,4 +1,4 @@
-# Version 2 : Done by Armaan
+# Version 2 : by Armaan
 PyPdf2 was deprecated so switched to a new version PyPdf only.
 Just run - and use it. (https://pypi.org/project/pypdf/#history)
 ```
